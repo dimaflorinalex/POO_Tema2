@@ -84,6 +84,10 @@ void CoffeeMachine::ShowCoffeesHistoryView() {
         cout << "- - - - - - - - - - - - - - - - - - - -" << endl;
     }
 
+    cout << "Apasati o tasta pentru a reveni la meniul principal" << endl;
+    cin.ignore();
+    cin.get();
+
     ShowMainMenuView();
 }
 
