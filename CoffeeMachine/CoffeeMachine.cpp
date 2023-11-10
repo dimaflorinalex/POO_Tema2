@@ -105,8 +105,6 @@ void CoffeeMachine::ShowPreparingCoffeeView(CoffeeType::CoffeeType coffeeType) {
         case CoffeeType::CoffeeWithMilkAndSugar:
             coffee = new CoffeeWithMilkAndSugar();
             break;
-        case CoffeeType::CustomCoffee:
-            break;
         default:
             cout << "Tipul de cafea ales nu exista!" << endl;
             return ShowMainMenuView();
