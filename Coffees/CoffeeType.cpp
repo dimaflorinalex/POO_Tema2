@@ -5,7 +5,6 @@ namespace CoffeeType {
         SimpleCoffee,
         CoffeeWithMilk,
         CoffeeWithSugar,
-        CoffeeWithMilkAndSugar,
-        CustomCoffee
+        CoffeeWithMilkAndSugar
     };
 }

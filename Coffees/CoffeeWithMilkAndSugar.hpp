@@ -2,11 +2,12 @@
 
 #include <iostream>
 #include <string>
-#include "SimpleCoffee.cpp"
+#include "CoffeeWithMilk.cpp"
+#include "CoffeeWithSugar.cpp"
 
 using namespace std;
 
-class CoffeeWithMilk : virtual public SimpleCoffee {
+class CoffeeWithMilkAndSugar : virtual public CoffeeWithMilk, virtual public CoffeeWithSugar {
     private:
         static const string name;
 
@@ -17,4 +18,4 @@ class CoffeeWithMilk : virtual public SimpleCoffee {
         void Brew(ostream & os) const override;
 };
 
-const string CoffeeWithMilk::name = "Cafea cu lapte";
+const string CoffeeWithMilkAndSugar::name = "Cafea cu lapte si zahar";

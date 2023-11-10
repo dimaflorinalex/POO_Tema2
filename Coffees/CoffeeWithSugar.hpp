@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class CoffeeWithMilk : virtual public SimpleCoffee {
+class CoffeeWithSugar : virtual public SimpleCoffee {
     private:
         static const string name;
 
@@ -17,4 +17,4 @@ class CoffeeWithMilk : virtual public SimpleCoffee {
         void Brew(ostream & os) const override;
 };
 
-const string CoffeeWithMilk::name = "Cafea cu lapte";
+const string CoffeeWithSugar::name = "Cafea cu zahar";

@@ -8,6 +8,16 @@
 
 using namespace std;
 
-void CoffeeWithMilk::Print(ostream & os) const {
-    os << put_time(localtime(&this->datetime), "%d.%m.%Y %H:%M:%S") << " - " << CoffeeWithMilk::name;
+string CoffeeWithMilk::GetName() const {
+    return CoffeeWithMilk::name;
+}
+
+void CoffeeWithMilk::Brew(ostream & os) const {
+    this->SimpleCoffee::Brew(os);
+    os << "Se adauga lapte..." << endl;
+}
+
+ostream & operator<<(ostream & os, CoffeeWithMilk const & coffee) {
+    coffee.PrintInfo(os);
+    return os;
 }

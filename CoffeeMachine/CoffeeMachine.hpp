@@ -3,14 +3,16 @@
 #include <iostream>
 #include <list>
 #include "../Coffees/CoffeeType.cpp"
-#include "../Coffees/Coffee.cpp"
+#include "../Coffees/SimpleCoffee.cpp"
 #include "../Coffees/CoffeeWithMilk.cpp"
+#include "../Coffees/CoffeeWithSugar.cpp"
+#include "../Coffees/CoffeeWithMilkAndSugar.cpp"
 
 using namespace std;
 
 class CoffeeMachine {
     private:
-        static list<Coffee*> coffeesHistory;
+        static list<CoffeeBase*> coffeesHistory;
         
         static void ClearMemory();
 
@@ -25,4 +27,4 @@ class CoffeeMachine {
         static void Init();
 };
 
-list<Coffee*> CoffeeMachine::coffeesHistory;
+list<CoffeeBase*> CoffeeMachine::coffeesHistory;

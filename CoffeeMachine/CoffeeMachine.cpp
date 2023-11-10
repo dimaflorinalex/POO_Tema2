@@ -10,7 +10,7 @@ void CoffeeMachine::Init() {
 }
 
 void CoffeeMachine::ClearMemory() {
-    for (list<Coffee*>::iterator it = coffeesHistory.begin(); it != coffeesHistory.end(); it++) {
+    for (list<CoffeeBase *>::iterator it = coffeesHistory.begin(); it != coffeesHistory.end(); it++) {
         delete *it;
     }
 
@@ -32,7 +32,6 @@ void CoffeeMachine::ShowMainMenuView() {
     cout << "3. Prepara o cafea cu lapte" << endl;
     cout << "4. Prepara o cafea cu zahar" << endl;
     cout << "5. Prepara o cafea cu lapte si zahar" << endl;
-    cout << "6. Prepara o cafea personalizata" << endl;
 
     int choice;
 
@@ -59,9 +58,6 @@ void CoffeeMachine::ShowMainMenuView() {
             case 5:
                 ShowPreparingCoffeeView(CoffeeType::CoffeeWithMilkAndSugar);
                 break;
-            case 6:
-                ShowPreparingCoffeeView(CoffeeType::CustomCoffee);
-                break;
             default:
                 choice = -1;
                 break; 
@@ -74,12 +70,13 @@ void CoffeeMachine::ShowCoffeesHistoryView() {
     cout << "- - - - - " << coffeesHistory.size() << " cafele preparate - - - - -" << endl;
 
     if (coffeesHistory.size() > 0) {
-        cout << "Nr - Data si ora - Ingrediente" << endl;
+        cout << "Nr - Data si ora - Tip cafea - Ingrediente" << endl;
 
         int i = 0;
-        for (list<Coffee*>::iterator it = coffeesHistory.begin(); it != coffeesHistory.end(); it++) {
+        for (list<CoffeeBase *>::iterator it = coffeesHistory.begin(); it != coffeesHistory.end(); it++) {
             i++;
-            cout << i << " - " << *(*it) << endl;
+            cout << i << " - ";
+            (*it)->PrintInfo(cout);
         }
         cout << "- - - - - - - - - - - - - - - - - - - -" << endl;
     }
@@ -92,39 +89,33 @@ void CoffeeMachine::ShowCoffeesHistoryView() {
 }
 
 void CoffeeMachine::ShowPreparingCoffeeView(CoffeeType::CoffeeType coffeeType) {
-    Coffee * coffee = nullptr;
+    CoffeeBase * coffee = nullptr;
 
+    cout << endl;
     switch (coffeeType) {
-        case CoffeeType::SimpleCoffee: {
-            cout << endl;
-            cout << "Se prepara o cafea simpla..." << endl;
-            coffee = new Coffee();
-            coffeesHistory.push_back(coffee);
-            cout << "Puteti servi cafeaua simpla" << endl;
+        case CoffeeType::SimpleCoffee:
+            coffee = new SimpleCoffee();
             break;
-        }
-        case CoffeeType::CoffeeWithMilk: {
-            cout << endl;
-            cout << "Se prepara o cafea cu lapte..." << endl;
+        case CoffeeType::CoffeeWithMilk:
             coffee = new CoffeeWithMilk();
-            coffeesHistory.push_back(coffee);
-            cout << "Puteti servi cafeaua cu lapte" << endl;
             break;
-        }
-        case CoffeeType::CoffeeWithSugar: {
+        case CoffeeType::CoffeeWithSugar:
+            coffee = new CoffeeWithSugar();
             break;
-        }
-        case CoffeeType::CoffeeWithMilkAndSugar: {
+        case CoffeeType::CoffeeWithMilkAndSugar:
+            coffee = new CoffeeWithMilkAndSugar();
             break;
-        }
-        case CoffeeType::CustomCoffee: {
+        case CoffeeType::CustomCoffee:
             break;
-        }
-        default: {
+        default:
             cout << "Tipul de cafea ales nu exista!" << endl;
-            break;
-        }
+            return ShowMainMenuView();
     }
+
+    cout << "Se prepara cafeaua..." << endl;
+    coffee->Brew(cout);
+    coffeesHistory.push_back(coffee);
+    cout << "Cafeaua poate fi servita." << endl;
 
     ShowMainMenuView();
 }
