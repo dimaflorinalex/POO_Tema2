@@ -21,7 +21,7 @@ Descriere: Interfata/logica unui aparat de cafea pentru prepararea catorva tipur
 3. SimpleCoffee - Cafea simpla, mosteneste CoffeeBase
 4. CoffeeWithMilk - Cafea cu lapte, mosteneste SimpleCoffee
 5. CoffeeWithSugar - Cafea cu zahar, mosteneste SimpleCoffee
-6. CoffeeWithMilkAndSugar - Cafea cu lapte si zahar, mosteneste CoffeeWithMilk si CoffeeWithSugar
+6. CoffeeWithMilkAndSugar - Cafea cu lapte si zahar, mosteneste CoffeeWithMilk si CoffeeWithSugar: rezolvam "Problema diamantului" (The Diamond Inheritance Problem) folosind mostenire virtuala.
 
 ### Enums
 1. IngredientType - Tipul ingredientelor (apa, cafea, zahar, lapte) (util pentru dictionare / unordered maps)
