@@ -15,6 +15,8 @@ Descriere: Interfata/logica unui aparat de cafea pentru prepararea catorva tipur
 6. Verifica ingredientele > Verifica cantitatile de ingrediente din aparatul de cafea (apa, cafea, zahar, lapte)
 7. Completeaza ingredientele > Umple aparatul de cafea cu ingrediente
 
+- Exista protectie impotriva optiunilor invalide.
+
 ### Clase
 1. CoffeeMachine - Contine doar membri si metode statice, nu este permisa instantierea ei (este o clasa "statica"). Are rolul de a tine starea globala a aparatului de cafea (istoric cafele, ingrediente, cantitati maxime de ingrediente), de a gestiona navigatia si helper pentru gestionarea datelor.
 2. CoffeeBase - Clasa abstracta: clasa de baza pentru tipurile de cafele
