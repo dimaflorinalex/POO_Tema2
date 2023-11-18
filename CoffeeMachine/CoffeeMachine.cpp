@@ -43,8 +43,8 @@ void CoffeeMachine::ShowMainMenuView() {
     cout << "3. Prepara o cafea cu lapte" << endl;
     cout << "4. Prepara o cafea cu zahar" << endl;
     cout << "5. Prepara o cafea cu lapte si zahar" << endl;
-    cout << "8. Verifica ingredientele" << endl;
-    cout << "9. Completeaza ingredientele" << endl;
+    cout << "6. Verifica ingredientele" << endl;
+    cout << "7. Completeaza ingredientele" << endl;
 
     int choice;
 
@@ -71,10 +71,10 @@ void CoffeeMachine::ShowMainMenuView() {
             case 5:
                 ShowPreparingCoffeeView(CoffeeType::CoffeeWithMilkAndSugar);
                 break;
-            case 8:
+            case 6:
                 ShowIngredientsView();
                 break;
-            case 9:
+            case 7:
                 ShowRefillView();
                 break;
             default:

@@ -10,7 +10,7 @@
 using namespace std;
 
 CoffeeWithSugar::CoffeeWithSugar(int availableWater, int availableCoffee, int availableSugar) :
-    SimpleCoffee(availableWater, availableCoffee) {
+    SimpleCoffee { availableWater, availableCoffee } {
     if (availableSugar < CoffeeWithSugar::sugar) {
         throw InsufficientIngredientException("Zahar insuficient");
     }

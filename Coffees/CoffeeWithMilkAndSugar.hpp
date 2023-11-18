@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class CoffeeWithMilkAndSugar : virtual public CoffeeWithMilk, virtual public CoffeeWithSugar {
+class CoffeeWithMilkAndSugar : public CoffeeWithMilk, public CoffeeWithSugar {
     private:
         static const string name;
 

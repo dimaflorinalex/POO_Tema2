@@ -10,7 +10,7 @@
 using namespace std;
 
 SimpleCoffee::SimpleCoffee(int availableWater, int availableCoffee) :
-    CoffeeBase() {
+    CoffeeBase { } {
     if (availableWater < SimpleCoffee::water) {
         throw InsufficientIngredientException("Apa insuficienta");
     }
