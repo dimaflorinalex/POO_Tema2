@@ -129,11 +129,15 @@ void CoffeeMachine::ShowRefillView() {
     cout << endl;
     try {
         CoffeeMachine::Refill();
-        cout << "Aparatul de cafea a fost umplut" << endl;
+        cout << "Aparatul de cafea a fost umplut." << endl;
     }
     catch (FullCoffeeMachineException& fcmex) {
         cout << "Aparatul de cafea nu a putut fi alimentat!" << endl;
         cout << "Eroare: " << fcmex.what() << endl;
+    }
+    catch (exception& ex) {
+        cout << "Am intampinat o eroare neasteptata!" << endl;
+        cout << "Eroare: " << ex.what() << endl;
     }
 
     ShowIngredientsView();
@@ -211,6 +215,10 @@ void CoffeeMachine::ShowPreparingCoffeeView(CoffeeType::CoffeeType coffeeType) {
     catch (InsufficientIngredientException& iiex) {
         cout << "Cafeaua nu a putut fi preparata." << endl;
         cout << "Eroare: " << iiex.what() << endl;
+    }
+    catch (exception& ex) {
+        cout << "Am intampinat o eroare neasteptata!" << endl;
+        cout << "Eroare: " << ex.what() << endl;
     }
     
     ShowMainMenuView();
