@@ -5,8 +5,16 @@
 #include <ctime>
 #include <iomanip>
 #include "CoffeeWithMilkAndSugar.hpp"
+#include "../Exceptions/InsufficientIngredientException.cpp"
 
 using namespace std;
+
+CoffeeWithMilkAndSugar::CoffeeWithMilkAndSugar(int availableWater, int availableCoffee, int availableMilk, int availableSugar) :
+    CoffeeWithMilk(availableWater, availableCoffee, availableMilk) {
+    if (availableSugar < CoffeeWithMilk::milk) {
+        throw InsufficientIngredientException("Zahar insuficient");
+    }
+}
 
 string CoffeeWithMilkAndSugar::GetName() const {
     return CoffeeWithMilkAndSugar::name;

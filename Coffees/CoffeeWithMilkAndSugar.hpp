@@ -15,6 +15,7 @@ class CoffeeWithMilkAndSugar : virtual public CoffeeWithMilk, virtual public Cof
         string GetName() const override;
 
     public:
+        CoffeeWithMilkAndSugar(int availableWater = 0, int availableCoffee = 0, int availableMilk = 0, int availableSugar = 0);
         void Brew(ostream & os) const override;
 };
 
