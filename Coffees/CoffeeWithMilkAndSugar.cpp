@@ -10,11 +10,9 @@
 using namespace std;
 
 CoffeeWithMilkAndSugar::CoffeeWithMilkAndSugar(int availableWater, int availableCoffee, int availableMilk, int availableSugar) :
-    CoffeeWithMilk { availableWater, availableCoffee, availableMilk } {
-    if (availableSugar < CoffeeWithSugar::sugar) {
-        throw InsufficientIngredientException("Zahar insuficient");
-    }
-}
+    SimpleCoffee { availableWater, availableCoffee },
+    CoffeeWithMilk { availableWater, availableCoffee, availableMilk },
+    CoffeeWithSugar { availableWater, availableCoffee, availableSugar } { }
 
 string CoffeeWithMilkAndSugar::GetName() const {
     return CoffeeWithMilkAndSugar::name;

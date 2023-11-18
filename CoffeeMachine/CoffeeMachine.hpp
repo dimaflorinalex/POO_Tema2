@@ -37,7 +37,7 @@ list<shared_ptr<CoffeeBase>> CoffeeMachine::coffeesHistory;
 unordered_map<IngredientType::IngredientType, int> CoffeeMachine::ingredientsQuantity;
 
 unordered_map<IngredientType::IngredientType, int> CoffeeMachine::maxIngredientsQuantity = {
-    { IngredientType::IngredientType::Water, 1500 },
+    { IngredientType::IngredientType::Water, 3000 },
     { IngredientType::IngredientType::Coffee, 300 },
     { IngredientType::IngredientType::Sugar, 200 },
     { IngredientType::IngredientType::Milk, 500 }
